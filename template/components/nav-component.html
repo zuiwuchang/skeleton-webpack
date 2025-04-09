@@ -1,0 +1,52 @@
+<div class="navbar-brand">
+    <a href="{{env.url('/')}}" class="navbar-item">
+        <span class="icon-text">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span>HOME</span>
+        </span>
+    </a>
+
+
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="menuActiveClass"
+        @click="menuActive=!menuActive">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+</div>
+
+<div class="navbar-menu" :class="menuActiveClass">
+    <div class="navbar-start">
+        <a href="{{env.url('/content/license.html')}}" class="navbar-item">
+            <span class="icon-text">
+                <span class="icon"><i class="fa-solid fa-file-contract"></i></span>
+                <span>LICENSE</span>
+            </span>
+        </a>
+
+        <a href="{{env.url('/content/about.html')}}" class="navbar-item">
+            <span class="icon-text">
+                <span class="icon"><i class="fa-solid fa-info"></i></span>
+                <span>ABOUT</span>
+            </span>
+        </a>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Theme</a>
+            <div class="navbar-dropdown is-boxed is-right">
+                <a class="navbar-item" @click="setTheme('Dark')"><i :class="isTheme('Dark')"></i>
+                    Dark</a>
+                <a class="navbar-item" @click="setTheme('Light')"><i :class="isTheme('Light')"></i>
+                    Light</a>
+                <hr class="navbar-divider">
+                <a class="navbar-item" @click="setTheme(null)">
+                    <i :class="isTheme(null)"></i>
+                    System
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

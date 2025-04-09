@@ -1,0 +1,28 @@
+{{extend 'base.html'}}
+
+{{block 'title'}}ABOUT{{/block}}
+
+{{block 'body'}}
+
+{{include 'components/top-nav-component.html' }}
+
+<div class="section">
+    <div class="container content">
+        <p>
+            This is a web front-end skeleton that integrates the following technologies:
+        </p>
+        <ul>
+            <li>Use <a href="https://goofychris.github.io/art-template/"><strong>art-template</strong></a> to render the
+                html template
+            </li>
+            <li>Use <a href="https://bulma.io/"><strong>Bulma</strong></a> as the main theme css</li>
+            <li>Use <a href="https://fontawesome.com/"><strong>fontawesome</strong></a> to display icons</li>
+            <li>Use <a href="https://alpinejs.dev/"><strong>alpinejs</strong></a> to implement script interaction</li>
+            <li>Use <a href="http://www.typescriptlang.org/"><strong>typescript</strong></a> to write web scripts</li>
+            <li>Use <a href="https://nodejs.org/"><strong>node</strong></a> and <a
+                    href="https://webpack.js.org/"><strong>webpack</strong></a> compile project</li>
+        </ul>
+    </div>
+</div>
+
+{{/block}}

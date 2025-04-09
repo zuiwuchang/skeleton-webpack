@@ -1,0 +1,18 @@
+{{extend 'base.html'}}
+
+{{block 'title'}}HOME{{/block}}
+
+{{block 'body'}}
+
+{{include 'components/top-nav-component.html' }}
+
+<div class="section">
+    <div class="container">
+        {{each items}}
+        <p id="{{$index}}">
+            {{$index}} {{$value}}
+        </p>
+        {{/each}}
+    </div>
+</div>
+{{/block}}

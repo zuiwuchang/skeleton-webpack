@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{block 'title'}}NONE{{/block}}</title>
+    <link href="{{env.url('/assets/fontawesome-free-6.7.2/css/all.min.css')}}" rel="stylesheet">
+    {{if env.dev }}
+    <link href="{{env.url('/style.scss')}}" rel="stylesheet">
+    {{else}}
+    <link href="{{env.url('/style.css')}}" rel="stylesheet">
+    {{/if}}
+
+    {{block 'head'}}
+    <style>
+        html {
+            scroll-padding-top: 4rem;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    {{/block}}
+
+    {{block 'js'}}
+    <script defer src="{{env.url(env.filename.replace(/\.html$/, '.js'))}}"></script>
+    <script defer src="{{env.url('/main.js')}}"></script>
+    {{/block}}
+</head>
+
+<body class="has-navbar-fixed-top" x-cloak x-data>
+
+    {{block 'body'}}
+
+    <div class="container content">
+        <p>
+            This template defines the generic page skeleton, and is being used by <strong>{{env.template}}!
+        </p>
+        <ul>
+            <li>You can define <strong>block 'title'</strong> to set the page title</li>
+            <li>You can define <strong>block 'head'</strong> to add extra content to the head tag</li>
+            <li>You can define <strong>block 'js'</strong> to replace default page javascript scripts</li>
+            <li>You can define <strong>block 'body'</strong> to replace the main content of the page</li>
+            <li>You can define <strong>block 'footer'</strong> to replace the footer content</li>
+        </ul>
+    </div>
+    {{/block}}
+
+
+    {{block 'footer'}}
+    <footer class="footer">
+        <div class="content has-text-centered">
+            For more details, please visit the githup <a href="https://github.com/zuiwuchang/skeleton-webpack">
+                project
+                <span class="icon"> <i class="fa-brands fa-github"></i></span>
+            </a>
+        </div>
+    </footer>
+    {{/block}}
+</body>
+
+</html>
